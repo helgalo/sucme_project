@@ -1,0 +1,165 @@
+package sucme;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class UsuarioDAO {
+            
+    //C - Create
+    public static void cadastrarUsuario(Usuario usuario){
+        String sql = "INSERT INTO sucme.usuarios "+
+                "(nome, data_nascimento, email, senha, cpf, flag_administrador, uf, afiliacao_politica)"+
+                "VALUES(?,?,?,?,?,?,?,?);";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try{
+            conn = ConexaoDB.getConnection();
+            stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, usuario.getNome());
+            stmt.setDate(2, Date.valueOf(usuario.getDataNascimento()));
+            stmt.setString(3, usuario.getEmail());
+            stmt.setString(4, usuario.getSenha());
+            stmt.setString(5, usuario.getCpf());
+            stmt.setBoolean(6, false);
+            stmt.setString(7, usuario.getUf());
+            stmt.setString(8, usuario.getAfiliacaoPolitica());
+            stmt.executeUpdate();
+            try(ResultSet rs = stmt.getGeneratedKeys()){
+                if (rs.next()) {
+                    usuario.setId(rs.getInt(1));
+                }                
+            }            
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao salvar usuario:"+e.getMessage());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+                ConexaoDB.closeConnection(conn);
+            }
+        }
+    }
+    
+    //R - Read
+    public List<Usuario> listarUsuarios () {
+        String sql = "SELECT id, nome, data_nascimento, email, senha, cpf, flag_administrador, uf, afiliacao_politica FROM sucme.usuario";
+        List<Usuario> usuarios = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try{
+            conn = ConexaoDB.getConnection();
+            stmt = conn.prepareStatement(sql);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Usuario u = new Usuario(
+                    rs.getInt("id"),
+                    rs.getString("nome"),
+                    rs.getDate("data_nascimento").toLocalDate(),
+                    rs.getString("email"),
+                    rs.getString("senha"),
+                    rs.getString("cpf"),
+                    rs.getBoolean("flag_administrador"),
+                    rs.getString("uf"),
+                    rs.getString("afiliacao_politica"));
+                usuarios.add(u);
+            }
+            
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao listar pessoa:"+e.getMessage());
+            
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+                ConexaoDB.closeConnection(conn);
+            }
+        return usuarios;
+        }
+    }
+    
+    //R - Read Password
+    public static boolean validarLogin (String email, String senha) {
+        String sql = "SELECT email, senha FROM sucme.usuarios WHERE email = ? AND senha = ?";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            conn = ConexaoDB.getConnection();            
+            stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, email);
+            stmt.setString(2, senha);
+            rs = stmt.executeQuery();
+            return rs.next();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            return false;
+        }
+    }
+    
+    //U - UPDATE
+    public void atualizarUsuario (Usuario usuario) {
+        String sql = "UPDATE sucme.usuarios "+
+                "SET nome = ?, data_nascimento = ?, email = ?, senha = ?, cpf = ?, flag_administrador = ?, uf = ?, afiliacao_politica = ? "+
+                "WHERE id = ?";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = ConexaoDB.getConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, usuario.getNome());
+            stmt.setDate(2, Date.valueOf(usuario.getDataNascimento()));
+            stmt.setString(3, usuario.getEmail());
+            stmt.setString(4, usuario.getSenha());
+            stmt.setString(5, usuario.getCpf());
+            stmt.setBoolean(6, usuario.isFlagAdministrador());
+            stmt.setString(7, usuario.getUf());
+            stmt.setString(8, usuario.getAfiliacaoPolitica());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao atualizar pessoa:"+e.getMessage());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+                ConexaoDB.closeConnection(conn);
+            }
+        }
+    }
+    
+    //D - DELETE
+    public void deletarUsuario (Usuario usuario) {
+        String sql = "DELETE FROM sucme.usuarios "+
+                "WHERE id = ?";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        try {
+            conn = ConexaoDB.getConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, usuario.getId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao deletar pessoa:"+e.getMessage());
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+                ConexaoDB.closeConnection(conn);
+            }
+        }
+    }
+}
