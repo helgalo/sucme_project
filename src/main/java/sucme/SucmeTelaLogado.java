@@ -1,5 +1,8 @@
 package sucme;
 
+import javax.swing.table.DefaultTableModel;
+import java.util.List;      
+
 public class SucmeTelaLogado extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SucmeTelaLogado.class.getName());
@@ -19,8 +22,14 @@ public class SucmeTelaLogado extends javax.swing.JFrame {
     private void initComponents() {
 
         btn_sair = new javax.swing.JButton();
+        btn_gerarRelatorio = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SUCME");
 
         btn_sair.setText("Sair");
         btn_sair.addActionListener(new java.awt.event.ActionListener() {
@@ -29,29 +38,147 @@ public class SucmeTelaLogado extends javax.swing.JFrame {
             }
         });
 
+        btn_gerarRelatorio.setText("Gerar Relatorio");
+        btn_gerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_gerarRelatorioActionPerformed(evt);
+            }
+        });
+
+        jTable1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id", "Nome", "Data Nasc.", "CPF", "Email", "UF", "Afiliacao Politica", "Administrador"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jTable1.setName("Relatorio de Usuarios"); // NOI18N
+        jTable1.setShowGrid(true);
+        jTable1.getTableHeader().setResizingAllowed(false);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setText("Bem-vindo Usuario!");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(338, 338, 338)
+                .addComponent(jLabel1)
+                .addContainerGap(356, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 32, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(178, Short.MAX_VALUE)
-                .addComponent(btn_sair)
-                .addGap(150, 150, 150))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_gerarRelatorio)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_sair)
+                        .addGap(22, 22, 22)))
+                .addGap(390, 390, 390))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(241, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_gerarRelatorio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_sair)
-                .addGap(36, 36, 36))
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
         dispose();
     }//GEN-LAST:event_btn_sairActionPerformed
+
+    private void preencherTabela(List<Usuario> lista) {
+        
+    // 1. Pega o modelo (estrutura de dados) da sua JTable
+    DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+    //String[] colunas = {
+        //"ID", "Nome", "Data Nasc.", "CPF", "E-mail", 
+        //"UF", "Afiliação Pol.", "Tipo"
+    //}; 
+    //modelo.setColumnIdentifiers(colunas);
+    // 2. Limpa todas as linhas antigas da tabela
+    modelo.setRowCount(0);
+
+    // 3. Itera sobre a lista e adiciona novas linhas
+    for (Usuario u : lista) {
+        // Usa a flagAdministrador para definir o Tipo
+        String tipo = u.isFlagAdministrador() ? "Administrador" : "Militante";
+       
+        // Adiciona uma nova linha com os dados do usuário
+        modelo.addRow(new Object[]{
+            u.getId(),
+            u.getNome(),
+            u.getDataNascimento(),
+            u.getCpf(),
+            u.getEmail(),
+            u.getUf(),
+            u.getAfiliacaoPolitica(),
+            tipo
+                
+        });
+    }
+}
+    
+    
+    
+    private void btn_gerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gerarRelatorioActionPerformed
+        try {
+        // 1. CHAMA O RELATÓRIO
+        List<Usuario> lista = Relatorio.gerarRelatorioUsuarios();
+
+        // 2. Exibe os dados na JTable
+        preencherTabela(lista);
+
+    } catch (Exception e) {
+        // Use JOptionPane para exibir a mensagem na tela, pois é um projeto Swing
+        javax.swing.JOptionPane.showMessageDialog(this, 
+            "Erro ao carregar o relatório:\n" + e.getMessage(), 
+            "Erro de Relatório", 
+            javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+        
+        
+        
+    }//GEN-LAST:event_btn_gerarRelatorioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,6 +206,11 @@ public class SucmeTelaLogado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_gerarRelatorio;
     private javax.swing.JButton btn_sair;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
