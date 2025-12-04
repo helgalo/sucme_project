@@ -136,7 +136,7 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_senhaActionPerformed
 
-    private void btn_logarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logarActionPerformed
+    //private void btn_logarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logarActionPerformed
         boolean result = UsuarioDAO.validarLogin(campo_email.getText(), campo_senha.getText());
         if (result == true) {
             System.out.println("Logou!");
