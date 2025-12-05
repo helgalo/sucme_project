@@ -96,15 +96,12 @@ public class SucmeTelaInicial extends javax.swing.JFrame {
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         SucmeTelaLado janela = new SucmeTelaLado();
         janela.setVisible(true);
-    //    this.dispose();
+        this.dispose();
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         dispose();
     }//GEN-LAST:event_btnSairActionPerformed
-//    public static void main(String args[]) {
-//        java.awt.EventQueue.invokeLater(() -> new SucmeTelaInicial().setVisible(true));
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
