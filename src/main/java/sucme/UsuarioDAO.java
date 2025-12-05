@@ -49,8 +49,8 @@ public class UsuarioDAO {
     }
     
     //R - Read
-    public List<Usuario> listarUsuarios () {
-        String sql = "SELECT id, nome, data_nascimento, email, senha, cpf, flag_administrador, uf, afiliacao_politica FROM sucme.usuario";
+        public static List<Usuario> listarUsuarios () {
+        String sql = "SELECT id, nome, data_nascimento, email, senha, cpf, flag_administrador, uf, afiliacao_politica FROM sucme.usuarios";
         List<Usuario> usuarios = new ArrayList<>();
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -70,7 +70,7 @@ public class UsuarioDAO {
                     rs.getBoolean("flag_administrador"),
                     rs.getString("uf"),
                     rs.getString("afiliacao_politica"));
-                usuarios.add(u);
+                    usuarios.add(u);
             }
             
         } catch (SQLException e) {
@@ -84,6 +84,7 @@ public class UsuarioDAO {
             } catch (SQLException e) {
                 ConexaoDB.closeConnection(conn);
             }
+            
         return usuarios;
         }
     }
