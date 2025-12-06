@@ -3,18 +3,18 @@ package sucme;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;      
 
-public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
+public class SucmeTelaLogado extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SucmeTelaLogadoAdmin.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SucmeTelaLogado.class.getName());
     private String email;
     private String senha;
 
-    public SucmeTelaLogadoAdmin() {
+    public SucmeTelaLogado() {
         initComponents();
         setLocationRelativeTo(null);
     }
 
-    public SucmeTelaLogadoAdmin(String email, String senha) {
+    public SucmeTelaLogado(String email, String senha) {
         this.email = email;
         this.senha = senha;
         initComponents();
@@ -171,11 +171,17 @@ public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
     
     private void btn_gerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_gerarRelatorioActionPerformed
         try {
-        preencherTabela(Relatorio.gerarRelatorioUsuarios());
+        // 1. CHAMA O RELATÓRIO
+        List<Usuario> lista = Relatorio.gerarRelatorioUsuarios();
+
+        // 2. Exibe os dados na JTable
+        preencherTabela(lista);
+
     } catch (Exception e) {
-        javax.swing.JOptionPane.showMessageDialog(this,
-            "Erro ao carregar o relatório:\n" + e.getMessage(),
-            "Erro de Relatório",
+        // Use JOptionPane para exibir a mensagem na tela, pois é um projeto Swing
+        javax.swing.JOptionPane.showMessageDialog(this, 
+            "Erro ao carregar o relatório:\n" + e.getMessage(), 
+            "Erro de Relatório", 
             javax.swing.JOptionPane.ERROR_MESSAGE);
     }
         
@@ -183,6 +189,12 @@ public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_gerarRelatorioActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(() -> new SucmeTelaLogado().setVisible(true));
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_gerarRelatorio;
