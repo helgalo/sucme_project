@@ -1,5 +1,7 @@
 package sucme;
 
+import java.util.ArrayList;
+
 public class SucmeTelaLogin extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SucmeTelaLogin.class.getName());
@@ -126,12 +128,20 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_campo_senhaActionPerformed
 
     private void btn_logarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logarActionPerformed
-        boolean result = UsuarioDAO.validarLogin(campo_email.getText(), campo_senha.getText());
-        if (result == true) {
+        ArrayList<Boolean> result = UsuarioDAO.validarLogin(campo_email.getText(), campo_senha.getText());
+        if (result.get(0) == true) {
             System.out.println("Logou!");
-            SucmeTelaLogadoAdmin janela = new SucmeTelaLogadoAdmin(campo_email.getText(), campo_senha.getText());
-            janela.setVisible(true);
-            this.dispose();
+            if (result.get(1) == true) {
+                SucmeTelaLogadoAdmin janela = new SucmeTelaLogadoAdmin(campo_email.getText(), campo_senha.getText());
+                janela.setVisible(true);
+                this.dispose();  
+            } else {
+                SucmeTelaLogadoUsuario janela = new SucmeTelaLogadoUsuario(campo_email.getText(), campo_senha.getText());
+                janela.setVisible(true);
+                this.dispose();
+            }
+            
+            
         } else {
             System.out.println("Login ou senha inválidos!");
             campo_senha.setText("");

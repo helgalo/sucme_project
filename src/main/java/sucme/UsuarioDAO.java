@@ -90,8 +90,9 @@ public class UsuarioDAO {
     }
     
     //R - Read Password
-    public static boolean validarLogin (String email, String senha) {
-        String sql = "SELECT email, senha FROM sucme.usuarios WHERE email = ? AND senha = ?";
+    public static ArrayList<Boolean> validarLogin (String email, String senha) {
+        ArrayList<Boolean> ResultadoLogin = new ArrayList<Boolean>();
+        String sql = "SELECT email, senha, flag_administrador FROM sucme.usuarios WHERE email = ? AND senha = ?";
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -101,10 +102,13 @@ public class UsuarioDAO {
             stmt.setString(1, email);
             stmt.setString(2, senha);
             rs = stmt.executeQuery();
-            return rs.next();
+            ResultadoLogin.add(rs.next());
+            ResultadoLogin.add(rs.getBoolean(3));
+            return  ResultadoLogin;
             } catch (SQLException e) {
                 e.printStackTrace();
-            return false;
+                ResultadoLogin.add(false);
+                return ResultadoLogin;
         }
     }
     
