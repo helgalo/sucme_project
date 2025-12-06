@@ -35,10 +35,10 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
         campo_data_nascimento = new javax.swing.JTextField();
         campo_email = new javax.swing.JTextField();
         campo_cpf = new javax.swing.JTextField();
-        campo_senha = new javax.swing.JTextField();
         btn_finalizar_cadastro = new javax.swing.JButton();
         btn_voltar = new javax.swing.JButton();
         campo_uf = new javax.swing.JComboBox<>();
+        campo_senha = new javax.swing.JPasswordField();
 
         jTextField4.setText("jTextField1");
 
@@ -74,6 +74,12 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
         campo_uf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_ufActionPerformed(evt);
+            }
+        });
+
+        campo_senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_senhaActionPerformed(evt);
             }
         });
 
@@ -179,16 +185,19 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_voltarActionPerformed
 
     private void btn_finalizar_cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finalizar_cadastroActionPerformed
+        char[] senhaChars = campo_senha.getPassword();
+        String senha = new String(senhaChars);
         Usuario u = new Usuario(
                 campo_nome.getText(),
                 LocalDate.parse(campo_data_nascimento.getText()),
                 campo_email.getText(),
-                campo_senha.getText(),
+                senha,
                 campo_cpf.getText(),
                 campo_uf.getSelectedItem().toString(),
                 afiliacaoPolitica
         );
         UsuarioDAO.cadastrarUsuario(u);
+        java.util.Arrays.fill(senhaChars, ' ');
         SucmeTelaInicial janela = new SucmeTelaInicial(); //trocar pra tela de escolha seu lado
         janela.setVisible(true);
         this.dispose();
@@ -197,6 +206,11 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
     private void campo_ufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_ufActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_ufActionPerformed
+
+    private void campo_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_senhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_senhaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_finalizar_cadastro;
     private javax.swing.JButton btn_voltar;
@@ -204,7 +218,7 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField campo_data_nascimento;
     private javax.swing.JTextField campo_email;
     private javax.swing.JTextField campo_nome;
-    private javax.swing.JTextField campo_senha;
+    private javax.swing.JPasswordField campo_senha;
     private javax.swing.JComboBox<String> campo_uf;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
