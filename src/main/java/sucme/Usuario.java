@@ -16,6 +16,10 @@ public class Usuario {
     public Usuario () {
     }
     
+    public Usuario (int id) {
+        this.id = id;
+    }
+    
     public Usuario (String nome, LocalDate dataNascimento, String email, String senha, String cpf, String uf, String afiliacaoPolitica) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;

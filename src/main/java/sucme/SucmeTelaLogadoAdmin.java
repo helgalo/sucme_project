@@ -30,6 +30,7 @@ public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btn_deletarUsuario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SUCME");
@@ -93,6 +94,13 @@ public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
                 .addGap(0, 32, Short.MAX_VALUE))
         );
 
+        btn_deletarUsuario.setText("Deletar Usuario");
+        btn_deletarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deletarUsuarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,7 +114,9 @@ public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btn_sair)
                         .addGap(22, 22, 22)))
-                .addGap(390, 390, 390))
+                .addGap(127, 127, 127)
+                .addComponent(btn_deletarUsuario)
+                .addGap(188, 188, 188))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +125,9 @@ public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_gerarRelatorio)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_gerarRelatorio)
+                    .addComponent(btn_deletarUsuario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_sair)
                 .addContainerGap())
@@ -162,7 +174,15 @@ public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
     }        
         
     }//GEN-LAST:event_btn_gerarRelatorioActionPerformed
+
+    private void btn_deletarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deletarUsuarioActionPerformed
+        SucmeTelaDeletarUsuario janela = new SucmeTelaDeletarUsuario(this.email, this.senha);
+        janela.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_deletarUsuarioActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_deletarUsuario;
     private javax.swing.JButton btn_gerarRelatorio;
     private javax.swing.JButton btn_sair;
     private javax.swing.JLabel jLabel1;

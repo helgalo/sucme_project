@@ -145,7 +145,7 @@ public class UsuarioDAO {
     }
     
     //D - DELETE
-    public void deletarUsuario (Usuario usuario) {
+    public static void deletarUsuario (Usuario usuario) {
         String sql = "DELETE FROM sucme.usuarios "+
                 "WHERE id = ?";
         Connection conn = null;
