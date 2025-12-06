@@ -102,11 +102,6 @@ public class SucmeTelaLado extends javax.swing.JFrame {
         janela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_voltarActionPerformed
-
-//    public static void main(String args[]) {
-//        java.awt.EventQueue.invokeLater(() -> new SucmeTelaLado().setVisible(true));
-//    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_continuar;
     private javax.swing.JComboBox<String> btn_escolha_lado;

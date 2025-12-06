@@ -129,7 +129,7 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
         boolean result = UsuarioDAO.validarLogin(campo_email.getText(), campo_senha.getText());
         if (result == true) {
             System.out.println("Logou!");
-            SucmeTelaLogado janela = new SucmeTelaLogado(campo_email.getText(), campo_senha.getText());
+            SucmeTelaLogadoAdmin janela = new SucmeTelaLogadoAdmin(campo_email.getText(), campo_senha.getText());
             janela.setVisible(true);
             this.dispose();
         } else {
@@ -143,11 +143,6 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
         janela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_voltarActionPerformed
-
-//    public static void main(String args[]) {
-//        java.awt.EventQueue.invokeLater(() -> new SucmeTelaLogin().setVisible(true));
-//    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_logar;
     private javax.swing.JButton btn_voltar;

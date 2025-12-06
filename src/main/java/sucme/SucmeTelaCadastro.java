@@ -197,11 +197,6 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
     private void campo_ufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_ufActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_ufActionPerformed
-
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(() -> new SucmeTelaCadastro().setVisible(true));
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_finalizar_cadastro;
     private javax.swing.JButton btn_voltar;
