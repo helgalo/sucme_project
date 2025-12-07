@@ -17,6 +17,39 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
+    
+    public static String trataMesCadastro(String mes) {
+        String retorno;
+        switch (mes) {
+            case "Janeiro":
+                return "01";
+            case "Fevereiro":
+                return "02";
+            case "Março":
+                return "03";
+            case "Abril":
+                return "04";
+            case "Maio":
+                return "05";
+            case "Junho":
+                return "06";
+            case "Julho":
+                return "07";
+            case "Agosto":
+                return "08";
+            case "Setembro":
+                return "09";
+            case "Outubro":
+                return "10";
+            case "Novembro":
+                return "11";
+            case "Dezembro":
+                return "12";
+        }            
+        retorno = mes;
+        return retorno;
+    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -32,13 +65,15 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
         lbl_cpf = new javax.swing.JLabel();
         lbl_senha = new javax.swing.JLabel();
         campo_nome = new javax.swing.JTextField();
-        campo_data_nascimento = new javax.swing.JTextField();
         campo_email = new javax.swing.JTextField();
         campo_cpf = new javax.swing.JTextField();
         btn_finalizar_cadastro = new javax.swing.JButton();
         btn_voltar = new javax.swing.JButton();
         campo_uf = new javax.swing.JComboBox<>();
         campo_senha = new javax.swing.JPasswordField();
+        campo_dia = new javax.swing.JComboBox<>();
+        campo_mes = new javax.swing.JComboBox<>();
+        campo_ano = new javax.swing.JComboBox<>();
 
         jTextField4.setText("jTextField1");
 
@@ -83,6 +118,27 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
             }
         });
 
+        campo_dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dia", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        campo_dia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_diaActionPerformed(evt);
+            }
+        });
+
+        campo_mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mês", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
+        campo_mes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_mesActionPerformed(evt);
+            }
+        });
+
+        campo_ano.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ano", "2007", "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", "1939", "1938", "1937", "1936", "1935", "1934", "1933", "1932", "1931", "1930", "1929", "1928", "1927", "1926" }));
+        campo_ano.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_anoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -91,13 +147,25 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lbl_data_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(campo_uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_finalizar_cadastro))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campo_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(campo_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(campo_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lbl_nome)
                         .addGap(81, 81, 81)
                         .addComponent(campo_nome))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(lbl_data_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campo_data_nascimento, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbl_email)
@@ -112,13 +180,7 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_voltar)
-                .addGap(148, 148, 148))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(campo_uf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_finalizar_cadastro))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(152, 152, 152))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,7 +192,9 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_data_nascimento)
-                    .addComponent(campo_data_nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campo_dia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campo_mes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campo_ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_email)
@@ -189,7 +253,7 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
         String senha = new String(senhaChars);
         Usuario u = new Usuario(
                 campo_nome.getText(),
-                LocalDate.parse(campo_data_nascimento.getText()),
+                LocalDate.parse(campo_ano.getSelectedItem().toString()+"-"+trataMesCadastro(campo_mes.getSelectedItem().toString())+"-"+campo_dia.getSelectedItem().toString()),
                 campo_email.getText(),
                 senha,
                 campo_cpf.getText(),
@@ -198,7 +262,7 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
         );
         UsuarioDAO.cadastrarUsuario(u);
         java.util.Arrays.fill(senhaChars, ' ');
-        SucmeTelaInicial janela = new SucmeTelaInicial(); //trocar pra tela de escolha seu lado
+        SucmeTelaInicial janela = new SucmeTelaInicial();
         janela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_finalizar_cadastroActionPerformed
@@ -211,12 +275,26 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_senhaActionPerformed
 
+    private void campo_diaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_diaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_diaActionPerformed
+
+    private void campo_mesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_mesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_mesActionPerformed
+
+    private void campo_anoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_anoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_anoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_finalizar_cadastro;
     private javax.swing.JButton btn_voltar;
+    private javax.swing.JComboBox<String> campo_ano;
     private javax.swing.JTextField campo_cpf;
-    private javax.swing.JTextField campo_data_nascimento;
+    private javax.swing.JComboBox<String> campo_dia;
     private javax.swing.JTextField campo_email;
+    private javax.swing.JComboBox<String> campo_mes;
     private javax.swing.JTextField campo_nome;
     private javax.swing.JPasswordField campo_senha;
     private javax.swing.JComboBox<String> campo_uf;
