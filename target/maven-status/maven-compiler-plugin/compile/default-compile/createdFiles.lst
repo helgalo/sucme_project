@@ -1,4 +1,3 @@
-sucme\SucmeTelaLado$2.class
 sucme\SucmeTelaLogadoAdmin.class
 sucme\SucmeTelaLogadoUsuario$1.class
 sucme\SucmeTelaInicial.class
@@ -12,6 +11,7 @@ sucme\SucmeTelaLogadoAdmin$2.class
 sucme\Sucme.class
 sucme\SucmeTelaDeletarUsuario$1.class
 sucme\ConexaoDB.class
+sucme\FundoPanel.class
 sucme\UsuarioDAO.class
 sucme\Administrador.class
 sucme\SucmeTelaCadastro$2.class
@@ -26,12 +26,10 @@ sucme\SucmeTelaCadastro$4.class
 sucme\SucmeTelaLado.class
 sucme\SucmeTelaCadastro.class
 sucme\SucmeTelaInicial$2.class
-sucme\SucmeTelaLado$3.class
 sucme\SucmeTelaLogin$2.class
 sucme\SucmeTelaCadastro$3.class
 sucme\SucmeTelaInicial$3.class
 sucme\SucmeTelaDeletarUsuario$2.class
-sucme\SucmeTelaLado$1.class
 sucme\SucmeTelaLogadoAdmin$3.class
 sucme\SucmeTelaCadastro$1.class
 sucme\Relatorio.class
