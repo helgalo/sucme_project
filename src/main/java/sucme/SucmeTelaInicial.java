@@ -1,8 +1,9 @@
 package sucme;
 
 public class SucmeTelaInicial extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SucmeTelaInicial.class.getName());
+
+    private static final java.util.logging.Logger logger =
+            java.util.logging.Logger.getLogger(SucmeTelaInicial.class.getName());
 
     public SucmeTelaInicial() {
         initComponents();
@@ -10,10 +11,9 @@ public class SucmeTelaInicial extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel1 = new FundoPanel("/imagens/fundo_inicial.png");
         btnCadastrar = new javax.swing.JButton();
         btnLogin = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
@@ -41,63 +41,79 @@ public class SucmeTelaInicial extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        javax.swing.GroupLayout jPanel1Layout =
+                new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(171, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSair)
-                    .addComponent(btnCadastrar)
-                    .addComponent(btnLogin))
-                .addGap(149, 149, 149))
+                jPanel1Layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout
+                                .createSequentialGroup()
+                                .addContainerGap(171, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(btnSair)
+                                        .addComponent(btnCadastrar)
+                                        .addComponent(btnLogin))
+                                .addGap(149, 149, 149))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(209, Short.MAX_VALUE)
-                .addComponent(btnLogin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCadastrar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnSair)
-                .addGap(10, 10, 10))
+                jPanel1Layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout
+                                .createSequentialGroup()
+                                .addContainerGap(209, Short.MAX_VALUE)
+                                .addComponent(btnLogin)
+                                .addPreferredGap(
+                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnCadastrar)
+                                .addPreferredGap(
+                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSair)
+                                .addGap(10, 10, 10))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout layout =
+                new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1,
+                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1,
+                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                Short.MAX_VALUE)
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {
         SucmeTelaLogin janela = new SucmeTelaLogin();
         janela.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnLoginActionPerformed
+    }
 
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {
         SucmeTelaLado janela = new SucmeTelaLado();
         janela.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnCadastrarActionPerformed
+    }
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {
         dispose();
-    }//GEN-LAST:event_btnSairActionPerformed
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    }
+
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSair;
     private javax.swing.JPanel jPanel1;
-    // End of variables declaration//GEN-END:variables
 }
