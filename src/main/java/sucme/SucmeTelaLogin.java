@@ -34,7 +34,6 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        campo_email.setText("email aqui");
         campo_email.setToolTipText("Digite seu email");
         campo_email.setName(""); // NOI18N
         campo_email.addActionListener(new java.awt.event.ActionListener() {
@@ -43,7 +42,6 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
             }
         });
 
-        campo_senha.setText("senha aqui");
         campo_senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_senhaActionPerformed(evt);
@@ -79,24 +77,24 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
                     .addComponent(lbl_email, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campo_senha)
-                    .addComponent(campo_email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(208, Short.MAX_VALUE))
+                    .addComponent(campo_email)
+                    .addComponent(campo_senha, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn_voltar)
                     .addComponent(btn_logar))
-                .addGap(40, 40, 40))
+                .addGap(19, 19, 19))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(btn_voltar)
-                .addGap(18, 18, 18)
+                .addContainerGap(109, Short.MAX_VALUE)
                 .addComponent(btn_logar)
-                .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_voltar)
+                .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campo_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_email))
@@ -135,7 +133,7 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
                 SucmeTelaLogadoAdmin janela = new SucmeTelaLogadoAdmin(campo_email.getText(), campo_senha.getText());
                 janela.setVisible(true);
                 this.dispose();  
-            } else {
+                } else {
                 SucmeTelaLogadoUsuario janela = new SucmeTelaLogadoUsuario(campo_email.getText(), campo_senha.getText());
                 janela.setVisible(true);
                 this.dispose();
