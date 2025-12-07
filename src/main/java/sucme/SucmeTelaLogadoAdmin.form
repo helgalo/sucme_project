@@ -19,137 +19,526 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,52,0,0,4,107"/>
   </AuxValues>
 
-  <Layout>
-    <DimensionLayout dim="0">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jScrollPane1" max="32767" attributes="0"/>
-          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btn_gerarRelatorio" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="btn_sair" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-              <Component id="btn_deletarUsuario" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-          </Group>
-      </Group>
-    </DimensionLayout>
-    <DimensionLayout dim="1">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="270" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn_gerarRelatorio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn_deletarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btn_sair" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-      </Group>
-    </DimensionLayout>
-  </Layout>
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="btn_sair">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Sair"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_sairActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btn_gerarRelatorio">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Gerar Relatorio"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_gerarRelatorioActionPerformed"/>
-      </Events>
-    </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-      <AuxValues>
-        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-      </AuxValues>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable1">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                <EtchetBorder/>
-              </Border>
-            </Property>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="8" rowCount="4">
-                <Column editable="true" title="Id" type="java.lang.Integer"/>
-                <Column editable="true" title="Nome" type="java.lang.String"/>
-                <Column editable="true" title="Data Nasc." type="java.lang.String"/>
-                <Column editable="true" title="CPF" type="java.lang.String"/>
-                <Column editable="true" title="Email" type="java.lang.String"/>
-                <Column editable="true" title="UF" type="java.lang.String"/>
-                <Column editable="true" title="Afiliacao Politica" type="java.lang.String"/>
-                <Column editable="true" title="Administrador" type="java.lang.Object"/>
-              </Table>
-            </Property>
-            <Property name="name" type="java.lang.String" value="Relatorio de Usuarios" noResource="true"/>
-            <Property name="showGrid" type="boolean" value="true"/>
-            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-              <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
-            </Property>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="campo_nome" alignment="0" max="32767" attributes="0"/>
+                      <Component id="campo_email" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lbl_nome" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_email" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="campo_dia" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="campo_mes" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                                          <Component id="lbl_data_de_nascimento" min="-2" pref="96" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Component id="campo_ano" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="campo_cpf" min="-2" pref="138" max="-2" attributes="0"/>
+                                      <Component id="lbl_cpf" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="lbl_senha" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="btn_atualizar_usuario" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                                  <Component id="btn_gerar_relatorio" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btn_deletarUsuario" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_uf" min="-2" max="-2" attributes="0"/>
+                              <Component id="campo_uf" max="32767" attributes="0"/>
+                              <Component id="lbl_afiliacao_politica" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="lbl_id" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="campo_id" min="-2" pref="31" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="campo_afiliacao_politica" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="265" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="campo_senha" min="-2" pref="123" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="356" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="1131" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="lbl_bem_vindo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="402" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="490" max="-2" attributes="0"/>
+                  <Component id="btn_sair" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jLabel1" min="-2" pref="68" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
+                  <Component id="lbl_bem_vindo" min="-2" pref="68" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" pref="263" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          <Component id="lbl_nome" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="lbl_cpf" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_uf" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbl_data_de_nascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="campo_nome" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo_dia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo_mes" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo_ano" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo_cpf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campo_uf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Component id="lbl_afiliacao_politica" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="campo_afiliacao_politica" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lbl_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campo_id" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btn_deletarUsuario" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lbl_email" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_senha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="campo_email" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campo_senha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btn_atualizar_usuario" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                              <Component id="btn_gerar_relatorio" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btn_sair" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lbl_bem_vindo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Bem-vindo Usuario!"/>
+            <Property name="text" type="java.lang.String" value="Bem-vindo Administrador!"/>
           </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTable" name="jTable1">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                  <Table columnCount="8" rowCount="4">
+                    <Column editable="true" title="Id" type="java.lang.Integer"/>
+                    <Column editable="true" title="Nome" type="java.lang.String"/>
+                    <Column editable="true" title="Data Nasc." type="java.lang.String"/>
+                    <Column editable="true" title="CPF" type="java.lang.String"/>
+                    <Column editable="true" title="Email" type="java.lang.String"/>
+                    <Column editable="true" title="UF" type="java.lang.String"/>
+                    <Column editable="true" title="Afiliacao Politica" type="java.lang.String"/>
+                    <Column editable="true" title="Administrador" type="java.lang.Object"/>
+                  </Table>
+                </Property>
+                <Property name="name" type="java.lang.String" value="Relatorio de Usuarios" noResource="true"/>
+                <Property name="showGrid" type="boolean" value="true"/>
+                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                  <TableHeader reorderingAllowed="false" resizingAllowed="false"/>
+                </Property>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="lbl_nome">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_data_de_nascimento">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Data Nascimento"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_cpf">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="CPF"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_email">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Email"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_uf">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="UF"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_afiliacao_politica">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Afiliacao Politica"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_id">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="campo_id">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_idActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lbl_senha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Senha"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_gerar_relatorio">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gerar Relatorio"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_gerar_relatorioActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="campo_nome">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_nomeActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="campo_cpf">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_cpfActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="campo_email">
+        </Component>
+        <Component class="javax.swing.JComboBox" name="campo_uf">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="28">
+                <StringItem index="0" value="Escolha seu Estado"/>
+                <StringItem index="1" value="AC"/>
+                <StringItem index="2" value="AL"/>
+                <StringItem index="3" value="AP"/>
+                <StringItem index="4" value="AM"/>
+                <StringItem index="5" value="BA"/>
+                <StringItem index="6" value="CE"/>
+                <StringItem index="7" value="DF"/>
+                <StringItem index="8" value="ES"/>
+                <StringItem index="9" value="GO"/>
+                <StringItem index="10" value="MA"/>
+                <StringItem index="11" value="MT"/>
+                <StringItem index="12" value="MS"/>
+                <StringItem index="13" value="MG"/>
+                <StringItem index="14" value="PA"/>
+                <StringItem index="15" value="PB"/>
+                <StringItem index="16" value="PR"/>
+                <StringItem index="17" value="PE"/>
+                <StringItem index="18" value="PI"/>
+                <StringItem index="19" value="RJ"/>
+                <StringItem index="20" value="RN"/>
+                <StringItem index="21" value="RS"/>
+                <StringItem index="22" value="RO"/>
+                <StringItem index="23" value="RR"/>
+                <StringItem index="24" value="SC"/>
+                <StringItem index="25" value="SP"/>
+                <StringItem index="26" value="SE"/>
+                <StringItem index="27" value="TO"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="campo_afiliacao_politica">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Escolha seu lado"/>
+                <StringItem index="1" value="Esquerda"/>
+                <StringItem index="2" value="Direita"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_sair">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sair"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_sairActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_deletarUsuario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Deletar Usuario"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_deletarUsuarioActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="campo_dia">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="32">
+                <StringItem index="0" value="Dia"/>
+                <StringItem index="1" value="01"/>
+                <StringItem index="2" value="02"/>
+                <StringItem index="3" value="03"/>
+                <StringItem index="4" value="04"/>
+                <StringItem index="5" value="05"/>
+                <StringItem index="6" value="06"/>
+                <StringItem index="7" value="07"/>
+                <StringItem index="8" value="08"/>
+                <StringItem index="9" value="09"/>
+                <StringItem index="10" value="10"/>
+                <StringItem index="11" value="11"/>
+                <StringItem index="12" value="12"/>
+                <StringItem index="13" value="13"/>
+                <StringItem index="14" value="14"/>
+                <StringItem index="15" value="15"/>
+                <StringItem index="16" value="16"/>
+                <StringItem index="17" value="17"/>
+                <StringItem index="18" value="18"/>
+                <StringItem index="19" value="19"/>
+                <StringItem index="20" value="20"/>
+                <StringItem index="21" value="21"/>
+                <StringItem index="22" value="22"/>
+                <StringItem index="23" value="23"/>
+                <StringItem index="24" value="24"/>
+                <StringItem index="25" value="25"/>
+                <StringItem index="26" value="26"/>
+                <StringItem index="27" value="27"/>
+                <StringItem index="28" value="28"/>
+                <StringItem index="29" value="29"/>
+                <StringItem index="30" value="30"/>
+                <StringItem index="31" value="31"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_diaActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="campo_mes">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="13">
+                <StringItem index="0" value="M&#xea;s"/>
+                <StringItem index="1" value="Janeiro"/>
+                <StringItem index="2" value="Fevereiro"/>
+                <StringItem index="3" value="Mar&#xe7;o"/>
+                <StringItem index="4" value="Abril"/>
+                <StringItem index="5" value="Maio"/>
+                <StringItem index="6" value="Junho"/>
+                <StringItem index="7" value="Julho"/>
+                <StringItem index="8" value="Agosto"/>
+                <StringItem index="9" value="Setembro"/>
+                <StringItem index="10" value="Outubro"/>
+                <StringItem index="11" value="Novembro"/>
+                <StringItem index="12" value="Dezembro"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="campo_ano">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="83">
+                <StringItem index="0" value="Ano"/>
+                <StringItem index="1" value="2007"/>
+                <StringItem index="2" value="2006"/>
+                <StringItem index="3" value="2005"/>
+                <StringItem index="4" value="2004"/>
+                <StringItem index="5" value="2003"/>
+                <StringItem index="6" value="2002"/>
+                <StringItem index="7" value="2001"/>
+                <StringItem index="8" value="2000"/>
+                <StringItem index="9" value="1999"/>
+                <StringItem index="10" value="1998"/>
+                <StringItem index="11" value="1997"/>
+                <StringItem index="12" value="1996"/>
+                <StringItem index="13" value="1995"/>
+                <StringItem index="14" value="1994"/>
+                <StringItem index="15" value="1993"/>
+                <StringItem index="16" value="1992"/>
+                <StringItem index="17" value="1991"/>
+                <StringItem index="18" value="1990"/>
+                <StringItem index="19" value="1989"/>
+                <StringItem index="20" value="1988"/>
+                <StringItem index="21" value="1987"/>
+                <StringItem index="22" value="1986"/>
+                <StringItem index="23" value="1985"/>
+                <StringItem index="24" value="1984"/>
+                <StringItem index="25" value="1983"/>
+                <StringItem index="26" value="1982"/>
+                <StringItem index="27" value="1981"/>
+                <StringItem index="28" value="1980"/>
+                <StringItem index="29" value="1979"/>
+                <StringItem index="30" value="1978"/>
+                <StringItem index="31" value="1977"/>
+                <StringItem index="32" value="1976"/>
+                <StringItem index="33" value="1975"/>
+                <StringItem index="34" value="1974"/>
+                <StringItem index="35" value="1973"/>
+                <StringItem index="36" value="1972"/>
+                <StringItem index="37" value="1971"/>
+                <StringItem index="38" value="1970"/>
+                <StringItem index="39" value="1969"/>
+                <StringItem index="40" value="1968"/>
+                <StringItem index="41" value="1967"/>
+                <StringItem index="42" value="1966"/>
+                <StringItem index="43" value="1965"/>
+                <StringItem index="44" value="1964"/>
+                <StringItem index="45" value="1963"/>
+                <StringItem index="46" value="1962"/>
+                <StringItem index="47" value="1961"/>
+                <StringItem index="48" value="1960"/>
+                <StringItem index="49" value="1959"/>
+                <StringItem index="50" value="1958"/>
+                <StringItem index="51" value="1957"/>
+                <StringItem index="52" value="1956"/>
+                <StringItem index="53" value="1955"/>
+                <StringItem index="54" value="1954"/>
+                <StringItem index="55" value="1953"/>
+                <StringItem index="56" value="1952"/>
+                <StringItem index="57" value="1951"/>
+                <StringItem index="58" value="1950"/>
+                <StringItem index="59" value="1949"/>
+                <StringItem index="60" value="1948"/>
+                <StringItem index="61" value="1947"/>
+                <StringItem index="62" value="1946"/>
+                <StringItem index="63" value="1945"/>
+                <StringItem index="64" value="1944"/>
+                <StringItem index="65" value="1943"/>
+                <StringItem index="66" value="1942"/>
+                <StringItem index="67" value="1941"/>
+                <StringItem index="68" value="1940"/>
+                <StringItem index="69" value="1939"/>
+                <StringItem index="70" value="1938"/>
+                <StringItem index="71" value="1937"/>
+                <StringItem index="72" value="1936"/>
+                <StringItem index="73" value="1935"/>
+                <StringItem index="74" value="1934"/>
+                <StringItem index="75" value="1933"/>
+                <StringItem index="76" value="1932"/>
+                <StringItem index="77" value="1931"/>
+                <StringItem index="78" value="1930"/>
+                <StringItem index="79" value="1929"/>
+                <StringItem index="80" value="1928"/>
+                <StringItem index="81" value="1927"/>
+                <StringItem index="82" value="1926"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btn_atualizar_usuario">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Atualizar Usuario"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_atualizar_usuarioActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="campo_senha">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_senhaActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="btn_deletarUsuario">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Deletar Usuario"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_deletarUsuarioActionPerformed"/>
-      </Events>
-    </Component>
   </SubComponents>
 </Form>

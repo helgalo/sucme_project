@@ -71,52 +71,56 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lbl_data_nascimento" min="-2" pref="110" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="campo_uf" min="-2" max="-2" attributes="0"/>
-                                          <Component id="btn_finalizar_cadastro" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_data_nascimento" min="-2" pref="110" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="campo_nome" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="campo_dia" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="campo_mes" max="32767" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="campo_ano" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="lbl_nome" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="campo_dia" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="campo_mes" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="campo_ano" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lbl_email" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbl_cpf" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="lbl_senha" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace pref="76" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="campo_senha" alignment="1" pref="280" max="32767" attributes="0"/>
+                                          <Component id="campo_cpf" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="campo_email" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lbl_nome" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                              <Component id="campo_nome" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lbl_email" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbl_cpf" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lbl_senha" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_finalizar_cadastro" alignment="0" min="-2" pref="145" max="-2" attributes="0"/>
+                                  <Component id="campo_uf" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="campo_email" pref="272" max="32767" attributes="0"/>
-                                  <Component id="campo_cpf" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="campo_senha" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="btn_voltar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -129,11 +133,13 @@
                           <Component id="campo_nome" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lbl_data_nascimento" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campo_dia" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campo_mes" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campo_ano" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="campo_mes" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lbl_data_nascimento" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campo_dia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="campo_ano" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -152,10 +158,11 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="campo_uf" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="btn_finalizar_cadastro" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="27" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btn_voltar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -185,8 +192,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Senha:"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="campo_nome">
             </Component>
             <Component class="javax.swing.JTextField" name="campo_email">
             </Component>
@@ -242,6 +247,7 @@
                     <StringItem index="27" value="TO"/>
                   </StringArray>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_ufActionPerformed"/>
@@ -424,6 +430,11 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="campo_nome">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_nomeActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
