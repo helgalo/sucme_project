@@ -4,9 +4,19 @@ public class SucmeTelaLado extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SucmeTelaLado.class.getName());
 
+    private FundoPanel fundo;
+
     public SucmeTelaLado() {
         initComponents();
         setLocationRelativeTo(null);
+        btn_escolha_lado.addItemListener(e -> {
+    if (e.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
+        javax.swing.SwingUtilities.invokeLater(() -> {
+            btn_escolha_lado.hidePopup();  // FORÇA fechar
+        });
+    }
+});
+
     }
 
     @SuppressWarnings("unchecked")
@@ -81,14 +91,28 @@ public class SucmeTelaLado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_continuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_continuarActionPerformed
-        SucmeTelaCadastro janela = new SucmeTelaCadastro(btn_escolha_lado.getSelectedItem().toString());
+    private void btn_continuarActionPerformed(java.awt.event.ActionEvent evt) {
+        SucmeTelaCadastro janela =
+                new SucmeTelaCadastro(btn_escolha_lado.getSelectedItem().toString());
         janela.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btn_continuarActionPerformed
+    }                                             
 
     private void btn_escolha_ladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_escolha_ladoActionPerformed
 
+
+        String escolha = btn_escolha_lado.getSelectedItem().toString();
+        switch (escolha) {
+            case "Esquerda":
+                fundo.setImage("/imagens/fundo_esquerda.jpg");            
+                break;
+            case "Direita":
+                break;
+
+            default:
+                fundo.setImage("/imagens/fundo_inicial.png");
+        }
+        
     }//GEN-LAST:event_btn_escolha_ladoActionPerformed
 
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed

@@ -60,23 +60,26 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="campo_senha" pref="110" max="32767" attributes="0"/>
-                      <Component id="lbl_senha" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lbl_email" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="campo_email" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="lbl_senha" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="lbl_email" min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="campo_email" alignment="0" pref="110" max="32767" attributes="0"/>
+                              <Component id="campo_senha" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="btn_logar" max="32767" attributes="0"/>
+                              <Component id="btn_voltar" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <EmptySpace min="0" pref="148" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btn_logar" pref="74" max="32767" attributes="0"/>
-                      <Component id="btn_voltar" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -91,11 +94,11 @@
                   <Component id="lbl_senha" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="campo_senha" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btn_logar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btn_voltar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -103,20 +106,12 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="campo_email">
           <Properties>
-            <Property name="text" type="java.lang.String" value="email aqui"/>
+            <Property name="text" type="java.lang.String" value="Digite seu email"/>
             <Property name="toolTipText" type="java.lang.String" value="Digite seu email"/>
             <Property name="name" type="java.lang.String" value="" noResource="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_emailActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="campo_senha">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="senha aqui"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_senhaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lbl_senha">
@@ -127,6 +122,11 @@
         <Component class="javax.swing.JLabel" name="lbl_email">
           <Properties>
             <Property name="text" type="java.lang.String" value="Email:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="campo_senha">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Digite sua senha"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btn_logar">

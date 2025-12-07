@@ -113,9 +113,9 @@ public class UsuarioDAO {
     }
     
     //U - UPDATE
-    public void atualizarUsuario (Usuario usuario) {
+    public static void atualizarUsuario (Usuario usuario) {
         String sql = "UPDATE sucme.usuarios "+
-                "SET nome = ?, data_nascimento = ?, email = ?, senha = ?, cpf = ?, flag_administrador = ?, uf = ?, afiliacao_politica = ? "+
+                "SET nome = ?, data_nascimento = ?, email = ?, senha = ?, cpf = ?, uf = ?, afiliacao_politica = ? "+
                 "WHERE id = ?";
         Connection conn = null;
         PreparedStatement stmt = null;
@@ -127,9 +127,9 @@ public class UsuarioDAO {
             stmt.setString(3, usuario.getEmail());
             stmt.setString(4, usuario.getSenha());
             stmt.setString(5, usuario.getCpf());
-            stmt.setBoolean(6, usuario.isFlagAdministrador());
-            stmt.setString(7, usuario.getUf());
-            stmt.setString(8, usuario.getAfiliacaoPolitica());
+            stmt.setString(6, usuario.getUf());
+            stmt.setString(7, usuario.getAfiliacaoPolitica());
+            stmt.setInt(8, usuario.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao atualizar pessoa:"+e.getMessage());
@@ -145,7 +145,7 @@ public class UsuarioDAO {
     }
     
     //D - DELETE
-    public void deletarUsuario (Usuario usuario) {
+    public static void deletarUsuario (Usuario usuario) {
         String sql = "DELETE FROM sucme.usuarios "+
                 "WHERE id = ?";
         Connection conn = null;
