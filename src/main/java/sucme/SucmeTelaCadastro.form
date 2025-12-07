@@ -177,6 +177,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="campo_nome">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_nomeActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="campo_data_nascimento">
             </Component>
@@ -236,6 +239,7 @@
                     <StringItem index="27" value="TO"/>
                   </StringArray>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campo_ufActionPerformed"/>

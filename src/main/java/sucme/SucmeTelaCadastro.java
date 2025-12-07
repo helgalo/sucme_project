@@ -56,6 +56,12 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
 
         lbl_senha.setText("Senha:");
 
+        campo_nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_nomeActionPerformed(evt);
+            }
+        });
+
         btn_finalizar_cadastro.setText("Finalizar Cadastro");
         btn_finalizar_cadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +77,7 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
         });
 
         campo_uf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Escolha seu Estado", "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO" }));
+        campo_uf.setToolTipText("");
         campo_uf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_ufActionPerformed(evt);
@@ -197,6 +204,11 @@ public class SucmeTelaCadastro extends javax.swing.JFrame {
     private void campo_ufActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_ufActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campo_ufActionPerformed
+
+    private void campo_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_nomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_nomeActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_finalizar_cadastro;
     private javax.swing.JButton btn_voltar;
