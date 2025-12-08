@@ -213,7 +213,38 @@ public class UsuarioDAO {
     }
 
     //B - BEM-VINDO
-    public static String bemVindo(String email, String senha) {
+    public static String side(String email, String senha) {
+        String sql = "SELECT afiliacao_politica FROM sucme.usuarios WHERE email = ? AND senha = ?";
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String userSide = null;
+        try {
+            conn = ConexaoDB.getConnection();
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, email);
+            stmt.setString(2, senha);
+            rs = stmt.executeQuery();
+            if (rs.next()) {
+                userSide = rs.getString("afiliacao_politica");
+                System.out.println(userSide);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao listar pessoa:" + e.getMessage());
+
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException e) {
+                ConexaoDB.closeConnection(conn);
+            }
+        }
+        return userSide;
+    }
+    
+     public static String bemVindo(String email, String senha) {
         String sql = "SELECT nome FROM sucme.usuarios WHERE email = ? AND senha = ?";
         Connection conn = null;
         PreparedStatement stmt = null;
