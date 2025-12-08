@@ -24,11 +24,11 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         campo_email = new javax.swing.JTextField();
-        campo_senha = new javax.swing.JTextField();
         lbl_senha = new javax.swing.JLabel();
         lbl_email = new javax.swing.JLabel();
         btn_logar = new javax.swing.JButton();
         btn_voltar = new javax.swing.JButton();
+        campo_senha = new javax.swing.JPasswordField();
 
         jTextField1.setText("jTextField1");
 
@@ -44,12 +44,6 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
         campo_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campo_emailActionPerformed(evt);
-            }
-        });
-
-        campo_senha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campo_senhaActionPerformed(evt);
             }
         });
 
@@ -73,6 +67,12 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
             }
         });
 
+        campo_senha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_senhaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,8 +84,8 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
                     .addComponent(lbl_email, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(campo_email)
-                    .addComponent(campo_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campo_email, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                    .addComponent(campo_senha, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_logar)
@@ -102,9 +102,9 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
                     .addComponent(btn_logar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campo_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_senha)
-                    .addComponent(btn_voltar))
+                    .addComponent(btn_voltar)
+                    .addComponent(campo_senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -113,9 +113,6 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
 
     private void campo_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_emailActionPerformed
     }//GEN-LAST:event_campo_emailActionPerformed
-
-    private void campo_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_senhaActionPerformed
-    }//GEN-LAST:event_campo_senhaActionPerformed
 
     private void btn_logarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logarActionPerformed
         ArrayList<Boolean> result = UsuarioDAO.validarLogin(campo_email.getText(), campo_senha.getText());
@@ -142,11 +139,16 @@ public class SucmeTelaLogin extends javax.swing.JFrame {
         janela.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_voltarActionPerformed
+
+    private void campo_senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_senhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_senhaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_logar;
     private javax.swing.JButton btn_voltar;
     private javax.swing.JTextField campo_email;
-    private javax.swing.JTextField campo_senha;
+    private javax.swing.JPasswordField campo_senha;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
