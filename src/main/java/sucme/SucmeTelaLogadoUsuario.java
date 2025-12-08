@@ -144,16 +144,23 @@ public class SucmeTelaLogadoUsuario extends javax.swing.JFrame {
             jblTotalEsquerda.setText("Total: " + totalEsquerda);
 
             String nomeUser = UsuarioDAO.bemVindo(this.email, this.senha);
+            String side = UsuarioDAO.side(this.email, this.senha);
 
-            if (totalEsquerda > totalDireita) {
+            if ((totalEsquerda > totalDireita) && "Esquerda".equals(side)) {
                 fundo.setImage("/imagens/vitoria_esquerda.jpg");
                 lblBemVindo.setText("Estamos vencendo, companheiro " + nomeUser + "!");
-            } else if (totalDireita > totalEsquerda) {
+            } else if (totalDireita > totalEsquerda && "Esquerda".equals(side)) {
+                fundo.setImage("/imagens/derrota_esquerda.jpg");
+                lblBemVindo.setText("Estamos perdendo, companheiro, " + nomeUser + ".");
+            } else if (totalDireita > totalEsquerda && "Direita".equals(side)) {
                 fundo.setImage("/imagens/vitoria_direita.jpg");
                 lblBemVindo.setText("Estamos na frente da petralhada, táok?, " + nomeUser + "!");
+            } else if (totalDireita < totalEsquerda && "Direita".equals(side)) {
+                fundo.setImage("/imagens/derrota_direita.jpg");
+                lblBemVindo.setText("Estamos perdendo da petralhada, táok?, " + nomeUser + ".");
             } else {
                 fundo.setImage("/imagens/fundo_inicial.png");
-                lblBemVindo.setText("Bem-vindo Militante: " + nomeUser + "!");
+                lblBemVindo.setText("Ta a pau à pau, " + nomeUser + "!");
             }
 
         } catch (RuntimeException e) {
