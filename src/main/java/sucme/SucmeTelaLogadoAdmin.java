@@ -55,6 +55,7 @@ public class SucmeTelaLogadoAdmin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SUCME");
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         lbl_bem_vindo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbl_bem_vindo.setText("Bem-vindo Administrador!");

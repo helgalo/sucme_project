@@ -8,18 +8,21 @@ public class SucmeTelaLogadoUsuario extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(SucmeTelaLogadoUsuario.class.getName());
     private String email;
     private String senha;
-    
-       
+    private FundoPanel fundo;
+
     public SucmeTelaLogadoUsuario(String email, String senha) {
         this.email = email;
         this.senha = senha;
-        
+
+        fundo = new FundoPanel("/imagens/fundo_inicial.png");
+        setContentPane(fundo);
+
         initComponents();
         setLocationRelativeTo(null);
-        lblBemVindo.setText("Bem-vindo Militante: " + UsuarioDAO.bemVindo(this.email, this.senha)+ "!");
+        lblBemVindo.setText("Bem-vindo Militante: " + UsuarioDAO.bemVindo(this.email, this.senha) + "!");
     }
-    
-        @SuppressWarnings("unchecked")
+
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -33,6 +36,7 @@ public class SucmeTelaLogadoUsuario extends javax.swing.JFrame {
         btnContagem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         btn_sair.setText("Sair");
         btn_sair.addActionListener(new java.awt.event.ActionListener() {
@@ -40,6 +44,8 @@ public class SucmeTelaLogadoUsuario extends javax.swing.JFrame {
                 btn_sairActionPerformed(evt);
             }
         });
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(350, 350));
 
         jblTotalDireita.setText(".");
 
@@ -59,19 +65,18 @@ public class SucmeTelaLogadoUsuario extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jblTextEsquerda, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jblTotalEsquerda, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jblTextDireita)
-                    .addComponent(jblTotalDireita, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
-                .addComponent(lblBemVindo)
-                .addGap(167, 167, 167))
+                    .addComponent(lblBemVindo)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jblTextEsquerda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jblTotalEsquerda, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jblTextDireita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jblTotalDireita, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -84,9 +89,9 @@ public class SucmeTelaLogadoUsuario extends javax.swing.JFrame {
                     .addComponent(jblTextDireita))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jblTotalEsquerda, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jblTotalDireita, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26))
+                    .addComponent(jblTotalEsquerda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jblTotalDireita, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btnContagem.setText("Contagem de Militantes");
@@ -101,66 +106,73 @@ public class SucmeTelaLogadoUsuario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(190, 190, 190)
-                                .addComponent(btnContagem))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(229, 229, 229)
-                                .addComponent(btn_sair)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_sair)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnContagem)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(btnContagem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btn_sair)
-                .addGap(29, 29, 29))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void atualizarContadores() {
-    try {
-        
-        Map<String, Integer> contagem = UsuarioDAO.contarMilitantesPorAfiliacao();
-                
-        int totalDireita = contagem.getOrDefault("Direita", 0);
-        int totalEsquerda = contagem.getOrDefault("Esquerda", 0);
-                
-        jblTotalDireita.setText("Total: " + totalDireita);
-        jblTotalEsquerda.setText("Total: " + totalEsquerda);
-        
-    } catch (RuntimeException e) {
-        System.err.println("Falha ao carregar contadores: " + e.getMessage());
-        JOptionPane.showMessageDialog(this, 
-            "Erro ao carregar estatísticas. Verifique a conexão e as tabelas do banco de dados.", 
-            "Erro de Carregamento", 
-            JOptionPane.ERROR_MESSAGE);
+        try {
+            Map<String, Integer> contagem = UsuarioDAO.contarMilitantesPorAfiliacao();
+
+            int totalDireita = contagem.getOrDefault("Direita", 0);
+            int totalEsquerda = contagem.getOrDefault("Esquerda", 0);
+
+            jblTotalDireita.setText("Total: " + totalDireita);
+            jblTotalEsquerda.setText("Total: " + totalEsquerda);
+
+            String nomeUser = UsuarioDAO.bemVindo(this.email, this.senha);
+
+            if (totalEsquerda > totalDireita) {
+                fundo.setImage("/imagens/vitoria_esquerda.jpg");
+                lblBemVindo.setText("Estamos vencendo, companheiro " + nomeUser + "!");
+            } else if (totalDireita > totalEsquerda) {
+                fundo.setImage("/imagens/vitoria_direita.jpg");
+                lblBemVindo.setText("Estamos na frente da petralhada, táok?, " + nomeUser + "!");
+            } else {
+                fundo.setImage("/imagens/fundo_inicial.png");
+                lblBemVindo.setText("Bem-vindo Militante: " + nomeUser + "!");
+            }
+
+        } catch (RuntimeException e) {
+            System.err.println("Falha ao carregar contadores: " + e.getMessage());
+            JOptionPane.showMessageDialog(this,
+                    "Erro ao carregar estatísticas. Verifique a conexão e as tabelas do banco de dados.",
+                    "Erro de Carregamento",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
-}
-    
-    
-    
-    
+
+
     private void btn_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sairActionPerformed
         dispose();
-    
+
     }//GEN-LAST:event_btn_sairActionPerformed
 
     private void btnContagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContagemActionPerformed
-     atualizarContadores();
+        atualizarContadores();
     }//GEN-LAST:event_btnContagemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
